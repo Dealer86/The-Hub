@@ -8,7 +8,7 @@ def fetch_local_events():
     url = "https://serpapi.com/search?engine=google_events"
 
     payload = {
-        "api_key": "82494264298a355af7471e5360d02d7fc2c5424671bde66958aa1664925e42cf",
+        "api_key": "ADI coder nebun ce esti, replace with real SERPI API_KEY",
         "engine": "google",
         "q": "Events in Sibiu",
     }

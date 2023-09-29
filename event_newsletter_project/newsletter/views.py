@@ -3,25 +3,30 @@ from .models import Event
 import requests
 
 
-# Function to fetch local weekend events from the SerpApi Google Events API
+# Function to fetch local weekend events from the SerpWow service
 def fetch_local_events():
-    api_key = "YOUR_SERPAPI_API_KEY"  # Replace with your actual SerpApi API key
-    api_url = (
-        f"https://serpapi.com/google-events-api?q=weekend%20events&api_key={api_key}"
-    )
+    url = "https://serpapi.com/search?engine=google_events"
 
-    try:
-        response = requests.get(api_url)
-
-        if response.status_code == 200:
-            events_data = response.json().get("events", [])
-            return events_data
-        else:
-            print(f"Failed to fetch events. Status code: {response.status_code}")
-            return []
-    except requests.exceptions.RequestException as e:
-        print(f"Error fetching events: {e}")
+    payload = {
+        "api_key": "82494264298a355af7471e5360d02d7fc2c5424671bde66958aa1664925e42cf",
+        "engine": "google",
+        "q": "Events in Sibiu",
+    }
+    response = requests.get(url, params=payload)
+    data = response.json()
+    events_data = []
+    if data:
+        for event in data["events_results"]:
+            a_dict = {
+                "title": event["title"],
+                "date": event["date"],
+                "address": event["address"],
+                "link": event["link"],
+            }
+            events_data.append(a_dict)
+    else:
         return []
+    return events_data
 
 
 # View to display the newsletter

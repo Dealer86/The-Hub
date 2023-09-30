@@ -1,34 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Weekend Events Newsletter</title>
-    <!-- Add Bootstrap CSS link here -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Event Finder</title>
 </head>
 <body>
-    <div class="container">
-        <h1 class="mt-5">Local Weekend Events Newsletter</h1>
-        <div class="mt-4">
-            {% for event in events %}
-                <div class="card mb-3">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ event.title }}</h5>
-                        <p class="card-text"><strong>Title:</strong> {{ event.title }}</p>
-                        <p class="card-text"><strong>Date:</strong> {{ event.date }}</p>
-                        <p class="card-text"><strong>Address:</strong> {{ event.address }}</p>
-                        <p class="card-text"><strong>Link:</strong> {{ event.link }}</p>
-                    </div>
-                </div>
-            {% empty %}
-                <p>No events found.</p>
-            {% endfor %}
-        </div>
-    </div>
-    <!-- Add Bootstrap JavaScript and jQuery links here -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <h1>Event Finder</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Search">
+    </form>
+    {% if events %}
+    <h2>Events in {{ form.city_location.value }}</h2>
+    <ul>
+        {% for event in events %}
+        <li>{{ event.title }} - {{ event.date }} - {{ event.address }} - <a href="{{ event.link }}" target="_blank">More info</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 </body>
 </html>

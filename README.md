@@ -1,2 +1,2 @@
-# Local-Weekend-Events
-A newsletter featuring free local weekend events
+# EventsHub
+EventHub is a place where you can track events from your preferred location.

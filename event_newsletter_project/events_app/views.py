@@ -28,6 +28,7 @@ def events_hub_views(request):
                 messages.error(request, f"Reason: {str(e)}")
     else:
         form = EventsHubForm()
+
     database_events = Event.objects.all()
 
     return render(

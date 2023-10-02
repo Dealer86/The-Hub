@@ -1,20 +1,18 @@
 import requests
 import pandas as pd
-
-URL = "https://serpapi.com/search?engine=google_events"
-API_KEY = "Enter real api KEY"
+from django.conf import settings
 
 
 class EventsHub:
     def __init__(self, city_location: str = "Sibiu"):
-        self.url = URL
-        self.api_key = API_KEY
+        self.url = settings.SERPAPI_URL
+        self.api_key = settings.API_KEY
         self.city_location = city_location
 
     # Function to fetch local weekend events from the SerpWow service
     def fetch_local_events(self):
         payload = {
-            "api_key": API_KEY,
+            "api_key": self.api_key,
             "engine": "google",
             "q": f"{self.city_location}",
         }

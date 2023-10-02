@@ -6,7 +6,7 @@ from .models import Event
 
 
 # View to display the World Events
-def newsletter(request):
+def events_hub_views(request):
     if request.method == "POST":
         form = EventsHubForm(request.POST)
         if form.is_valid():
@@ -28,9 +28,8 @@ def newsletter(request):
                 messages.error(request, f"Reason: {str(e)}")
     else:
         form = EventsHubForm()
-
     database_events = Event.objects.all()
 
     return render(
-        request, "newsletter/newsletter.html", {"form": form, "events": database_events}
+        request, "events_app/events_app.html", {"form": form, "events": database_events}
     )

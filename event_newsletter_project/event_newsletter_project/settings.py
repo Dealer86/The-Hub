@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "newsletter",
+    "events_app",
 ]
 
 MIDDLEWARE = [
@@ -126,3 +126,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Ensure that Django project's settings have proper configurations for handling media files
 # MEDIA_URL = "/media/"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+API_KEY = "82494264298a355af7471e5360d02d7fc2c5424671bde66958aa1664925e42cf"
+SERPAPI_URL = "https://serpapi.com/search?engine=google_events"

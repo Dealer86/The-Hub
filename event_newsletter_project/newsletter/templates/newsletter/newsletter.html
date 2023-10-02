@@ -1,22 +1,56 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Event Finder</title>
+    <meta charset="UTF-8">
+    <title>World Events</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'newsletter/styles.css' %}">
 </head>
 <body>
-    <h1>Event Finder</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Search">
-    </form>
-    {% if events %}
-    <h2>Events in {{ form.city_location.value }}</h2>
-    <ul>
+    <header class="sticky">
+        <h1>World Events</h1>
+        <nav>
+            <form method="post" class="center-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Get Events</button>
+            </form>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Display the retrieved events -->
+    <ol>
         {% for event in events %}
-        <li>{{ event.title }} - {{ event.date }} - {{ event.address }} - <a href="{{ event.link }}" target="_blank">More info</a></li>
+            <li class="event">
+                <h3 class="event-title">{{ event.title }}</h3>
+                <!-- Used the event.image URL directly within an <img> tag  as the scr attribute to display the image for each event. -->
+                <img src="{{ event.image }}" alt="{{ event.title }} Image" class="center-image">
+                <p class="event-description">Description: {{ event.description }}</p>
+                <p class="event-date">Date: {{ event.date }}</p>
+                <p class="event-address">Address: {{ event.address }}</p>
+                <a class="event-link" href="{{ event.link }}" target="_blank">More info</a>
+            </li>
+        {% empty %}
+            <li>No articles available.</li>
         {% endfor %}
-    </ul>
-    {% endif %}
+    </ol>
+
+    <script>
+    window.onscroll = function() {
+        // Get the header element
+        var header = document.querySelector('header');
+
+        // When the user scrolls down, add the 'sticky' class to the header
+        if (window.pageYOffset > 0) {
+            header.classList.add('sticky');
+        } else {
+            // Remove the 'sticky' class when the user scrolls to the top
+            header.classList.remove('sticky');
+        }
+    };
+    </script>
 </body>
 </html>

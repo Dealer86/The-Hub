@@ -16,19 +16,27 @@ class EventsHub:
         payload = {
             "api_key": API_KEY,
             "engine": "google",
-            "q": f"Events in {self.city_location}",
+            "q": f"{self.city_location}",
         }
         response = requests.get(self.url, params=payload)
         data = response.json()
         events_data = []
         if data:
             for event in data["events_results"]:
+                description = event.get("description", "No description available")
+                description = "".join(description.split(".")[0] + ".")
+                image = event.get("image", "No image")
+
                 title = event.get("title", "Unknown Title")
                 date = event.get("date", "Unknown Date")
+                date = date["when"]
                 address = event.get("address", "Unknown Address")
+                address = "".join(address)
                 link = event.get("link", "Unknown Link")
                 event_dict = {
                     "title": title,
+                    "description": description,
+                    "image": image,
                     "date": date,
                     "address": address,
                     "link": link,

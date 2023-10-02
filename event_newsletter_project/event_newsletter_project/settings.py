@@ -128,5 +128,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-API_KEY = "82494264298a355af7471e5360d02d7fc2c5424671bde66958aa1664925e42cf"
+API_KEY = "real api key"
 SERPAPI_URL = "https://serpapi.com/search?engine=google_events"

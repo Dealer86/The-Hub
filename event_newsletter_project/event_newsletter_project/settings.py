@@ -25,7 +25,7 @@ SECRET_KEY = "django-insecure-j6ooaa9mb=me6xh(92y4_sf68)eb!+k+d$xvoj(i(%i(0d15#-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -128,5 +128,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-API_KEY = "real api key"
+API_KEY = "Enter SerpApi API KEY here..."
 SERPAPI_URL = "https://serpapi.com/search?engine=google_events"

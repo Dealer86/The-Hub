@@ -1,5 +1,6 @@
 from django.test import TestCase, SimpleTestCase
 from django.urls import reverse
+from .models import Event
 
 # TestCase its used if it has a database
 # SimpleTestCase is used if we do not have a database
@@ -8,7 +9,7 @@ from django.urls import reverse
 # Reverse is used to test the URL name for each page/route
 
 
-class EventHubViewsTests(TestCase):
+class EventsHubViewsTests(TestCase):
     # test URL location
     def test_url_exists_at_the_correct_location(self):
         #  If we have another route then localhost like about you must end it with a slash /about/
@@ -35,3 +36,11 @@ class EventHubViewsTests(TestCase):
     # def __get_response(self):
     #     response = self.client.get(reverse("event_hub_views"))
     #     return response
+
+    def test_post_valid_form(self):
+        response = self.client.post(
+            reverse("event_hub_views"),
+            data={"google_events_search_query": "New York"},
+        )
+        self.assertEqual(response.status_code, 200)
+        self.assertTemplateUsed(response, "events_app/events_app.html")

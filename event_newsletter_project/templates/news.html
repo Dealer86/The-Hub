@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NewsHub</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header class="sticky">
+        <h1>Fresh and Trendy News</h1>
+        <nav>
+            <form method="post" class="center-form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Get News</button>
+            </form>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Display the retrieved news articles -->
+    <h2>News Articles</h2>
+    <ul>
+        {% for article in articles %}
+            <li class="article">
+                <h3 class="article-title">{{ article.title }}</h3>
+                <p class="article-author">Author: {{ article.author }}</p>
+                <a class="article-link" href="{{ article.url }}" target="_blank">Read more</a>
+            </li>
+        {% empty %}
+            <li>No articles available.</li>
+        {% endfor %}
+    </ul>
+
+    <script>
+    window.onscroll = function() {
+        // Get the header element
+        var header = document.querySelector('header');
+
+        // When the user scrolls down, add the 'sticky' class to the header
+        if (window.pageYOffset > 0) {
+            header.classList.add('sticky');
+        } else {
+            // Remove the 'sticky' class when the user scrolls to the top
+            header.classList.remove('sticky');
+        }
+    };
+    </script>
+</body>
+</html>

@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("events/", include("events_app.urls")),
+    path("", include("events_app.urls")),
     path("news/", include("news_app.urls")),
 ]
 # Ensures that media files can be accessed by the development server.

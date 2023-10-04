@@ -146,7 +146,6 @@ NEWS_API_COUNTRIES = [
     "be",
     "bg",
     "br",
-    "ca",
     "ch",
     "cn",
     "co",

@@ -14,7 +14,7 @@ class EventsHubViewsTests(TestCase):
     def test_url_exists_at_the_correct_location(self):
         #  If we have another route then localhost like about you must end it with a slash /about/
         #  To run test quit server if running and python manage.py test
-        response = self.client.get("/")
+        response = self.client.get("/events/")
         self.assertEqual(response.status_code, 200)
 
     # test URL names
@@ -25,7 +25,7 @@ class EventsHubViewsTests(TestCase):
     # test that the correct templates are used on each page
     def test_template_name_correct(self):
         response = self.client.get(reverse("event_hub_views"))
-        self.assertTemplateUsed(response, "events_app/events_app.html")
+        self.assertTemplateUsed(response, "events_app.html")
 
     # test that they display the expected content
     def test_template_content(self):
@@ -43,4 +43,4 @@ class EventsHubViewsTests(TestCase):
             data={"google_events_search_query": "New York"},
         )
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "events_app/events_app.html")
+        self.assertTemplateUsed(response, "events_app.html")

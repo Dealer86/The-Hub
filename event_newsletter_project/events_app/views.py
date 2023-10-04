@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.contrib import messages  # Import messages framework
+from django.views.generic import TemplateView
+
 from .forms import EventsHubForm
 from .local_events import EventsHub
 from .models import Event
@@ -32,3 +34,7 @@ def events_hub_views(request):
     database_events = Event.objects.all()
 
     return render(request, "events_app.html", {"form": form, "events": database_events})
+
+
+class HomePageView(TemplateView):
+    template_name = "home.html"

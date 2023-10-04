@@ -133,11 +133,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-API_KEY = "Enter SerpAPI real key"
+SERPAPI_KEY = "Enter SerpAPI real API KEY"
 SERPAPI_URL = "https://serpapi.com/search?engine=google_events"
 
 NEWS_API_URL = "https://newsapi.org/v2/top-headlines"
-NEWS_API_KEY = "Enter News API real key"
+NEWS_API_KEY = "Enter News API real API KEY"
 NEWS_API_COUNTRIES = [
     "ae",
     "ar",

@@ -6,7 +6,7 @@ from django.conf import settings
 class EventsHub:
     def __init__(self, city_location: str = "Sibiu"):
         self.url = settings.SERPAPI_URL
-        self.api_key = settings.API_KEY
+        self.api_key = settings.SERPAPI_KEY
         self.city_location = city_location
 
     # Function to fetch local weekend events from the SerpWow service

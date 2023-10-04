@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "events_app",
+    "news_app",
 ]
 
 MIDDLEWARE = [
@@ -55,7 +56,7 @@ ROOT_URLCONF = "event_newsletter_project.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],  # Created a Project level Templates
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -117,6 +118,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
+# Created a Project-Level Static Directory
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -128,5 +133,73 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-API_KEY = "Enter SerpApi API KEY here..."
+API_KEY = "82494264298a355af7471e5360d02d7fc2c5424671bde66958aa1664925e42cf"
 SERPAPI_URL = "https://serpapi.com/search?engine=google_events"
+
+NEWS_API_URL = "https://newsapi.org/v2/top-headlines"
+NEWS_API_KEY = "8d55d7aa2ea64b638a8359ee44a038f8"
+NEWS_API_COUNTRIES = [
+    "ae",
+    "ar",
+    "at",
+    "au",
+    "be",
+    "bg",
+    "br",
+    "ca",
+    "ch",
+    "cn",
+    "co",
+    "cu",
+    "cz",
+    "de",
+    "eg",
+    "fr",
+    "gb",
+    "gr",
+    "hk",
+    "hu",
+    "id",
+    "ie",
+    "il",
+    "in",
+    "it",
+    "jp",
+    "kr",
+    "lt",
+    "lv",
+    "ma",
+    "mx",
+    "my",
+    "ng",
+    "nl",
+    "no",
+    "nz",
+    "ph",
+    "pl",
+    "pt",
+    "ro",
+    "rs",
+    "ru",
+    "sa",
+    "se",
+    "sg",
+    "si",
+    "sk",
+    "th",
+    "tr",
+    "tw",
+    "ua",
+    "us",
+    "ve",
+    "za",
+]
+NEWS_API_CATEGORIES = [
+    "general",
+    "sports",
+    "technology",
+    "business",
+    "entertainment",
+    "health",
+    "science",
+]

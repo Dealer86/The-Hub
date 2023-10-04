@@ -1,6 +1,6 @@
 from django.test import TestCase, SimpleTestCase
 from django.urls import reverse
-from .models import Event
+
 
 # TestCase its used if it has a database
 # SimpleTestCase is used if we do not have a database

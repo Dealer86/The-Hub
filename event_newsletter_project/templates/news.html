@@ -4,12 +4,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>NewsHub</title>
+    <title>News Hub</title>
     <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
     <header class="sticky">
-        <h1>Fresh and Trendy News</h1>
+        <p>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'event_hub_views' %}">Events</a>
+        </p>
+        <h1>News Hub</h1>
         <nav>
             <form method="post" class="center-form">
                 {% csrf_token %}

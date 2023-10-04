@@ -31,6 +31,4 @@ def events_hub_views(request):
 
     database_events = Event.objects.all()
 
-    return render(
-        request, "events_app/events_app.html", {"form": form, "events": database_events}
-    )
+    return render(request, "events_app.html", {"form": form, "events": database_events})

@@ -1,5 +1,16 @@
-<!--templates/home.html-->
-<h1>
-    <a href="{% url 'event_hub_views' %}">Events Hub</a> |
-    <a href="{% url  'get_news' %}">News Hub</a>
-</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="static/css/home.css">
+</head>
+<body>
+    <div class="split-container">
+        <div class="split left">
+            <a href="{% url 'event_hub_views' %}" class="large-link">Events Hub</a>
+        </div>
+        <div class="split right">
+            <a href="{% url  'get_news' %}" class="large-link">News Hub</a>
+        </div>
+    </div>
+</body>
+</html>

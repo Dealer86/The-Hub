@@ -164,7 +164,20 @@ nav a:hover {
     font-weight: bold; /* Make "Hub" bold */
 
 }
+/* Footer styles */
+        footer {
+            background-color: #333; /* Background color for the footer */
+            color: #fff; /* Text color for the footer */
+            padding: 10px 0; /* Padding for top and bottom */
+            text-align: center;
+        }
 
+        /* Date and time widget styles */
+        #datetime-widget {
+            font-size: 18px; /* Font size for the date and time */
+            font-weight: bold; /* Bold text for emphasis */
+            margin: 0; /* Remove default margin */
+        }
     </style>
 </head>
 <body>
@@ -200,5 +213,25 @@ nav a:hover {
         </div>
         {% endfor %}
     </div>
+    <footer>
+        <p id="datetime"></p>
+    </footer>
+
+    <!-- JavaScript to update the date and time -->
+    <script>
+        function updateDateTime() {
+            const datetimeElement = document.getElementById("datetime");
+            const now = new Date();
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            const timeOptions = { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: true };
+            const formattedDate = now.toLocaleDateString(undefined, dateOptions);
+            const formattedTime = now.toLocaleTimeString(undefined, timeOptions);
+            datetimeElement.textContent = `${formattedDate}, ${formattedTime}`;
+        }
+
+        // Update date and time initially and then every second
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
 </body>
 </html>

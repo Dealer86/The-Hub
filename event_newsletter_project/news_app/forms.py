@@ -5,10 +5,16 @@ from django.conf import settings  # Import Django settings module
 
 class NewsForm(forms.Form):
     country = forms.CharField(
-        max_length=2, widget=forms.TextInput(attrs={"class": "form-input"})
+        max_length=2,
+        widget=forms.TextInput(
+            attrs={"class": "form-input", "placeholder": "Search country"}
+        ),
     )
     category = forms.CharField(
-        max_length=30, widget=forms.TextInput(attrs={"class": "form-input"})
+        max_length=30,
+        widget=forms.TextInput(
+            attrs={"class": "form-input", "placeholder": "Search category"}
+        ),
     )
 
     def clean_country(self):

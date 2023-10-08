@@ -32,9 +32,11 @@ class GetNewsTests(TestCase):
         """
         Test the handling of invalid form data for the "country" field.
         """
+        country = "xx"
+        general = "general"
         invalid_data = {
-            "country": "xx",  # This should trigger a validation error
-            "category": "general",
+            "country": country,  # This should trigger a validation error
+            "category": general,
         }
         response = self.client.post(reverse("get_news"), data=invalid_data)
 
@@ -48,7 +50,7 @@ class GetNewsTests(TestCase):
         # Check the error message for the 'country' field.
         self.assertEqual(
             response.context["form"].errors["country"][0],
-            "Invalid country. Please choose a valid country.",
+            f"Select a valid choice. {country} is not one of the available choices.",
         )
 
     def test_valid_form_data(self):

@@ -4,57 +4,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events Hub</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/events.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="sticky">
-        <p>
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url  'get_news' %}">News Hub</a>
-        </p>
-        <h1>Events Hub</h1>
+    <header class="sticky-header">
+        <h1 class="hub-heading">
+            <span class="letter n1">E</span>
+            <span class="letter n2">v</span>
+            <span class="letter n3">e</span>
+            <span class="letter n4">n</span>
+            <span class="letter n5">t</span>
+            <span class="letter n6">s</span>
+            <span class="hub-text"> Hub</span>
+        </h1>
+        <form method="post" class="center-form">
+            {% csrf_token %}
+            {{ form.google_events_search_query }}
+            <button type="submit">Get Events</button>
+        </form>
         <nav>
-            <form method="post" class="center-form">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Get Events</button>
-            </form>
+            <a href="{% url 'home' %}">Home</a>
+            <a href="{% url 'get_news' %}">News Hub</a>
         </nav>
     </header>
 
-    <hr>
-
-    <!-- Display the retrieved events -->
-    <ol>
+    <div class="event-row">
         {% for event in events %}
-            <li class="event">
-                <h3 class="event-title">{{ event.title }}</h3>
-                <!-- Used the event.image URL directly within an <img> tag  as the scr attribute to display the image for each event. -->
-                <img src="{{ event.image }}" alt="{{ event.title }} Image" class="center-image">
-                <p class="event-description">Description: {{ event.description }}</p>
-                <p class="event-date">Date: {{ event.date }}</p>
-                <p class="event-address">Address: {{ event.address }}</p>
-                <a class="event-link" href="{{ event.link }}" target="_blank">More info</a>
-            </li>
-        {% empty %}
-            <li>No articles available.</li>
+        <div class="event">
+            <div class="event-content">
+                <div class="event-title">{{ event.title }}</div>
+                <div class="event-description">{{ event.description }}</div>
+                <div class="event-date">Date: {{ event.date }}</div>
+                <div class="event-address">Location: {{ event.address }}</div>
+                <a class="event-link" href="{{ event.link }}" target="_blank">Read more</a>
+            </div>
+            <div class="event-image">
+                <img src="{{ event.image }}" alt="{{ event.title }}">
+            </div>
+        </div>
+        {% if forloop.counter|divisibleby:2 == 0 %}
+        </div>
+        <div class="event-row">
+        {% endif %}
         {% endfor %}
-    </ol>
+    </div>
 
-    <script>
-    window.onscroll = function() {
-        // Get the header element
-        var header = document.querySelector('header');
+    <footer>
+        <p id="datetime"></p>
+    </footer>
 
-        // When the user scrolls down, add the 'sticky' class to the header
-        if (window.pageYOffset > 0) {
-            header.classList.add('sticky');
-        } else {
-            // Remove the 'sticky' class when the user scrolls to the top
-            header.classList.remove('sticky');
-        }
-    };
-    </script>
+    <!-- JavaScript to update the date and time -->
+    <script src="{% static 'js/base_script.js' %}"></script>
 </body>
 </html>

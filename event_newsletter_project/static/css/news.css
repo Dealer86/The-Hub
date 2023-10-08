@@ -41,10 +41,13 @@ nav a:hover {
     color: black; /* Hover text color */
 }
 
-/* Form style */
-.center-form {
-    display: flex;
-    align-items: center;
+/* Style form input fields */
+.form-input {
+    padding: 8px;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 3px;
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
 .center-form button {
@@ -62,13 +65,7 @@ nav a:hover {
     box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
 }
 
-.center-form input[type="text"] {
-    padding: 8px;
-    border: 1px solid #ccc; /* Border color */
-    border-radius: 3px;
-    border-radius: 10px; /* Rounded edges */
-    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
-}
+
 
 .center-form button,
 .center-form input[type="text"] {

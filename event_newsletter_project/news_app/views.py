@@ -50,6 +50,9 @@ def get_news(request):
                 messages.error(
                     request, "Invalid category. Please choose a valid category."
                 )
+            except Exception as e:
+                messages.error(request, f"Reason: {str(e)}")
+
     else:
         form = NewsForm()
     articles = NewsArticle.objects.all()

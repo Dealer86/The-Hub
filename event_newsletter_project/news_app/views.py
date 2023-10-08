@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib import messages  # Import messages framework
 from .forms import NewsForm
 from .models import NewsArticle
-from .news import News, CountryNotFoundError, CategoryNotFoundError
+from .news import News
 
 
 def get_news(request):
@@ -42,14 +42,6 @@ def get_news(request):
                     NewsArticle.objects.create(
                         author=article.author, title=article.title, url=article.url
                     )
-            except CountryNotFoundError:
-                messages.error(
-                    request, "Invalid country. Please choose a valid country."
-                )
-            except CategoryNotFoundError:
-                messages.error(
-                    request, "Invalid category. Please choose a valid category."
-                )
             except Exception as e:
                 messages.error(request, f"Reason: {str(e)}")
 

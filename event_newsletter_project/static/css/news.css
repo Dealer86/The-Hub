@@ -1,0 +1,173 @@
+
+/* Apply the Roboto font to specific elements */
+body, h1, h2, h3, h4, h5, p, a, button, input, textarea, select, span, div, form {
+    font-family: 'Roboto', sans-serif;
+}
+/* Page background color */
+body {
+    background-color: #f0f8ff; /* Very pale blue background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Sticky header style */
+.sticky-header {
+    position: sticky;
+    top: 0;
+    background-color: white; /* Blue background color */
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+        /* Style for links in the navigation */
+nav a {
+    text-decoration: none;
+    color: black; /* Default link color */
+    padding: 10px 20px; /* Add padding to create a button-like appearance */
+    border-radius: 20px; /* Rounded edges */
+    background-color: white; /* Default background color */
+    transition: background-color 0.3s ease-in-out; /* Smooth color transition */
+    margin: 0 10px; /* Add spacing between links */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Hover effect for links */
+nav a:hover {
+    background-color: #cfe0e8; /* Hover background color */
+    color: black; /* Hover text color */
+}
+
+/* Form style */
+.center-form {
+    display: flex;
+    align-items: center;
+}
+
+.center-form button {
+    background-color: #e74c3c; /* Red button background color */
+    color: #fff; /* White button text color */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out; /* Smooth background color transition */
+}
+
+.center-form button:hover {
+    background-color: #c0392b; /* Hover background color */
+    box-shadow: 0 5px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.center-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 3px;
+    border-radius: 10px; /* Rounded edges */
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.center-form button,
+.center-form input[type="text"] {
+    margin-left: 10px; /* Add spacing between input and button */
+}
+/* Center the article columns on the screen */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure the container takes at least the full viewport height */
+    background-color: #f0f8ff; /* Very pale blue background */
+}
+
+/* Article column container */
+.article-column-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Center items vertically within each column */
+
+    padding: 5px; /* Add padding to create space around the columns */
+    background-color: white; /* White background for the container */
+    border-radius: 20px; /* Rounded corners for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    max-width: 1000px; /* Set a maximum width for the columns */
+    margin: 10px auto 10px; /* Center the container horizontally and add margin to the top */
+
+}
+
+/* Article column */
+.article-column {
+    width: calc(50% - 20px); /* Two columns per row with spacing */
+    box-sizing: border-box;
+    margin-bottom: 20px; /* Space between columns */
+    padding: 10px; /* Add padding to create space around the articles */
+}
+
+/* Article tabs style */
+.article-tab {
+    background-color: #fff; /* White background for tabs */
+    border-radius: 30px; /* Rounded corners for tabs */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4); /* Shadow effect */
+    padding: 20px; /* Padding inside tabs */
+}
+
+/* Article title style */
+.article-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+
+}
+
+/* Article author style */
+.article-author {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+/* Article link style */
+.article-link {
+    text-decoration: none;
+    color: #0078d4; /* Link color */
+}
+
+/* Style for individual letters in "News" */
+.news-letter {
+    font-size: 24px; /* Adjust font size as needed */
+    font-weight: bold; /* Make letters bold */
+    display: inline-block; /* Keep each letter on the same line */
+    margin-right: -8px; /* Add spacing between letters */
+}
+
+/* Define colors for each letter in "News" */
+.n1 { color: blue; }
+.n2 { color: red; }
+.n3 { color: orange; }
+.n4 { color: green; }
+
+/* Style for "Hub" */
+.hub-text {
+    color: gray; /* White color for "Hub" */
+    font-size: 22px; /* Adjust font size as needed */
+    font-weight: bold; /* Make "Hub" bold */
+
+}
+/* Footer styles */
+footer {
+    background-color: #333; /* Background color for the footer */
+    color: #fff; /* Text color for the footer */
+    padding: 10px 0; /* Padding for top and bottom */
+    text-align: center;
+}
+
+/* Date and time widget styles */
+#datetime-widget {
+    font-size: 18px; /* Font size for the date and time */
+    font-weight: bold; /* Bold text for emphasis */
+    margin: 0; /* Remove default margin */
+}

@@ -5,7 +5,7 @@ The Hub is a place where you can retrieve and display news articles based on use
 ### Windows:
 1. Clone the git repository: `git clone https://github.com/Dealer86/The-Hub.git`.
 2. CD into your created directory.
-3. Create a new virtual environment by running `python -m venv .venv/`.
+3. Create a new virtual environment by running `python -m venv env/`.
 4. Activate the virtual environment by running `.\env\Scripts\activate`.
 5. Upgrade pip by running `python.exe -m pip install --upgrade pip`.
 6. Install the required dependencies by running `pip install -r requirements.txt`.

@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -139,11 +141,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
-SERPAPI_KEY = "Enter SerpAPI real API KEY"
+load_dotenv(".env.local")
+
+SERPAPI_KEY = os.getenv("SERPAPI_KEY")
 SERPAPI_URL = "https://serpapi.com/search?engine=google_events"
 
 NEWS_API_URL = "https://newsapi.org/v2/top-headlines"
-NEWS_API_KEY = "Enter News API real API KEY"
+NEWS_API_KEY = os.getenv("NEWS_API_KEY")
+
 NEWS_API_COUNTRIES = [
     "ae",
     "ar",

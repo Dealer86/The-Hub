@@ -9,7 +9,12 @@ The Hub is a place where you can retrieve and display news articles based on use
 4. Activate the virtual environment by running `.\env\Scripts\activate`.
 5. Upgrade pip by running `python.exe -m pip install --upgrade pip`.
 6. Install the required dependencies by running `pip install -r requirements.txt`.
-7. Change NEWS_API_KEY and SERPAPI_KEY located in project settings.py with your real API KEY from https://newsapi.org/ and https://serpapi.com/
+7. Create a .env.local file in the project's root directory (where manage.py is) and add this sensitive constants with the real API KEY: SERPAPI_KEY="your_serpapi_key_here" NEWS_API_KEY="your_news_api_key_here". From https://newsapi.org/ and https://serpapi.com/
 8. Be sure the CD into the events_newsletter_project directory where manage.py module lives.
 9. Run: `python manage.py runserver`
 10. Check http://127.0.0.1:8000/.
+
+## License
+
+- This project is licensed under the [MIT License](LICENSE).
+- You can find the full text of the license in the [LICENSE](LICENSE) file.

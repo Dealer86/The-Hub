@@ -140,7 +140,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # MEDIA_URL = "/media/"
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
-
 load_dotenv(".env.local")
 
 SERPAPI_KEY = os.getenv("SERPAPI_KEY")

@@ -1,6 +1,10 @@
 # <span style="color: #007bff;">The Hub</span>
 The Hub is a place where you can retrieve and display news articles based on user-specified country and category also current/upcoming events from your preferred location.
-### Deployment Instructions
+## Video Presentation
+
+[![Video Demo](https://img.youtube.com/vi/fUWraULaFSI/0.jpg)](https://www.youtube.com/watch?v=fUWraULaFSI)
+
+## Deployment Instructions
 
 ### Windows:
 1. Clone the git repository: `git clone https://github.com/Dealer86/The-Hub.git`.
@@ -14,6 +18,28 @@ The Hub is a place where you can retrieve and display news articles based on use
 9. Run `python manage.py migrate`
 10. Run: `python manage.py runserver`
 11. Check http://127.0.0.1:8000/.
+
+## Technology Stack
+
+### Django Web Framework
+- **Django**: The core web framework for building the project.
+
+### Backend
+- **Python**: The primary programming language for the backend logic.
+
+### Frontend
+- **HTML**: Used for structuring web pages.
+- **CSS**: Applied for styling the user interface.
+- **JavaScript**: Date and time display
+
+### Data Storage and Processing
+- **Database**: Django's default database system.
+- **Pandas**: A Python library for data manipulation.
+- **Requests Library**: Used to send HTTP requests for data retrieval.
+
+### Third-Party Tools
+- **OBS**: Used for screen recording and live-streaming.
+- **DaVinci Resolve**: Video editing for project-related content.
 
 ### License
 

@@ -39,7 +39,8 @@ The Hub is a place where you can retrieve and display news articles based on use
 
 ### Testing
 - **Unit Tests**: Using Django's built-in testing framework.
-- **Continuous Integration**: This project uses GitHub Actions for automated continuous integration.[![Django CI](https://github.com/Dealer86/The-Hub/actions/workflows/django.yml/badge.svg)](https://github.com/Dealer86/The-Hub/actions/workflows/django.yml)
+- **Continuous Integration**: This project uses GitHub Actions for automated continuous integration.
+[![Django CI](https://github.com/Dealer86/The-Hub/actions/workflows/django.yml/badge.svg)](https://github.com/Dealer86/The-Hub/actions/workflows/django.yml)
 ### Third-Party Tools
 - **OBS**: Used for screen recording and live-streaming.
 - **DaVinci Resolve**: Video editing for project-related content.

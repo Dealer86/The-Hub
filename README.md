@@ -37,6 +37,8 @@ The Hub is a place where you can retrieve and display news articles based on use
 - **Pandas**: A Python library for data manipulation.
 - **Requests Library**: Used to send HTTP requests for data retrieval.
 
+### Testing
+- **Unit Tests**: Using Django's built-in testing framework.
 ### Third-Party Tools
 - **OBS**: Used for screen recording and live-streaming.
 - **DaVinci Resolve**: Video editing for project-related content.

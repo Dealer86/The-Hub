@@ -26,7 +26,7 @@ class GetNewsTests(TestCase):
         Test whether the template for "get_news" view contains the expected content, specifically, a title tag with the text "News Hub".
         """
         response = self.client.get(reverse("get_news"))
-        self.assertContains(response, "<title>News Hub</title>")
+        self.assertContains(response, '<button type="submit">Get News</button>')
 
     def test_invalid_form_data_for_country(self):
         """

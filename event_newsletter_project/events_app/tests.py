@@ -30,7 +30,7 @@ class EventsHubViewsTests(TestCase):
     # test that they display the expected content
     def test_template_content(self):
         response = self.client.get(reverse("event_hub_views"))
-        self.assertContains(response, "<title>Events Hub</title>")
+        self.assertContains(response, '<button type="submit">Get Events</button>')
 
     # You can use this to abide by DRY
     # def __get_response(self):

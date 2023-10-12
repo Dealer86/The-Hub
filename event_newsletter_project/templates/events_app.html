@@ -1,16 +1,16 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Events Hub</title>
+{% block get_title %}
+<title>Events Hub</title>
+{% endblock get_title %}
+
+{% block get_static %}
+    {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/events.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <header class="sticky-header">
+{% endblock get_static %}
+
+{% block content %}
+<header class="sticky-header">
         <h1 class="hub-heading">
             <span class="letter n1">E</span>
             <span class="letter n2">v</span>
@@ -52,11 +52,5 @@
         {% endfor %}
     </div>
 
-    <footer>
-        <p id="datetime"></p>
-    </footer>
 
-    <!-- JavaScript to update the date and time -->
-    <script src="{% static 'js/base_script.js' %}"></script>
-</body>
-</html>
+{% endblock content%}

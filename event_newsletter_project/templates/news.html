@@ -1,15 +1,15 @@
-{% load static %}
+{% extends 'base.html' %}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Hub</title>
+{% block get_title %}
+<title>News Hub</title>
+{% endblock get_title %}
+
+{% block get_static %}
+    {% load static %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/news.css' %}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
-<body>
+{% endblock get_static %}
+
+{% block content %}
     <header class="sticky-header">
         <h1 class="news-hub-heading">
             <span class="news-letter n1">N</span>
@@ -41,10 +41,5 @@
         </div>
         {% endfor %}
     </div>
-    <footer>
-        <p id="datetime"></p>
-    </footer>
-    <!-- JavaScript to update the date and time -->
-    <script src="{% static 'js/base_script.js' %}"></script>
-</body>
-</html>
+
+{% endblock content %}
